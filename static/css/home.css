@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  height: 80px;
+  width: 100%;
+  padding: 0 30px;
+}
+
+.top_left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.top_left h2 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.top_right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.top_right a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.top_right button {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 7px 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.top_right button a {
+  color: white;
+}
+
+.body {
+  background-image: url("../imadges/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.body h2.book {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.body h2.sec {
+  color: #00ff00;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.body p {
+  max-width: 600px;
+  font-size: 18px;
+}
+
+.body button {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.working {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #111;
+}
+
+.working h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.working p {
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+.working .div1,
+.working .div2,
+.working .div3 {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background-color: grey;
+  border-radius: 40px;
+  padding: 30px 15px;
+  text-align: center;
+  color: white;
+  transition: transform 0.2s ease;
+  border: none;
+}
+
+.working .div1:hover,
+.working .div2:hover,
+.working .div3:hover {
+  transform: translateY(-5px);
+}
+
+.working .div0 {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+}
+.working h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: green;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.feature {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: left;
+}
+
+.feature h3 {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+footer {
+  background-color: #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: white;
+}
+
+.cta {
+  background-color: rgb(28, 36, 26);
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.cta h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta button {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 12px 25px;
+  font-size: 18px;
+  cursor: pointer;
+}

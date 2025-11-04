@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VisionNova Futsal</title>
+    {% load static %}
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  </head>
+  <body>
+    <div class="whole">
+      <header>
+        <div class="top">
+          <div class="top_left">
+            <img
+              src="{% static 'images/logo.png' %}"
+              alt="Logo"
+              width="70"
+              height="70"
+            />
+            <h2>Futsal Hub</h2>
+          </div>
+          <div class="top_right">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'grounds_list' %}">Grounds</a>
+            <a href="{% url 'bookings_list' %}">Bookings</a>
+            <button><a href="{% url 'login' %}">Login</a></button>
+          </div>
+        </div>
+
+        <div class="body">
+          <h2 class="book">Book your futsal match</h2>
+          <h2 class="sec">in seconds</h2>
+          <p>
+            Fast, reliable, and hassle-free futsal ground booking. Find the
+            perfect court, choose your time, and get playing.
+          </p>
+          <button>Book now</button>
+        </div>
+      </header>
+
+      <div class="working">
+        <h1>How It Works</h1>
+        <p>Three simple steps to book your futsal ground</p>
+        <div class="div0">
+          <div class="div1">
+            <img
+              src="{% static 'images/map.png' %}"
+              alt="map logo"
+              width="30px"
+              height="30px"
+            />
+            <h3>1. Choose Ground</h3>
+            <p>
+              Browse available futsal grounds in your area and select your
+              favorite
+            </p>
+          </div>
+          <div class="div2">
+            <img
+              src="{% static 'images/clock.png' %}"
+              alt="clock logo"
+              width="30px"
+              height="30px"
+            />
+            <h3>2. Select Date & Time</h3>
+            <p>
+              Pick your preferred date and time slot that works for your team
+            </p>
+          </div>
+          <div class="div3">
+            <img
+              src="{% static 'images/check.png' %}"
+              alt="check logo"
+              width="30px"
+              height="30px"
+            />
+            <h3>3. Confirm Booking</h3>
+            <p>Complete your booking and receive instant confirmation</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <h2>Ready to Play?</h2>
+        <p>
+          Join thousands of players who trust Futsal Booker for their game
+          bookings
+        </p>
+        <button>
+          <a
+            href="{% url 'grounds_list' %}"
+            style="color: white; text-decoration: none"
+            >Browse Grounds</a
+          >
+        </button>
+      </div>
+
+      <footer>
+        <p>&copy; 2025 VisionNova Futsal. Contact: admin@visionnova.com</p>
+      </footer>
+    </div>
+  </body>
+</html>
