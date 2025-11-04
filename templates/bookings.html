@@ -1,11 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bookings</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings</title>
+  <link rel="stylesheet" href="{% static 'css/bookings.css' %}">
 </head>
 <body>
-    <h2>Bookings Page</h2>
-    <p>List of current and upcoming futsal bookings will appear here.</p>
+  <header>
+    <h1>My Bookings</h1>
+  </header>
+
+  <section class="booking-list-section">
+    {% if bookings %}
+      {% for booking in bookings %}
+        <div class="booking-card {% if booking.status == 'completed' %}completed{% elif booking.status == 'pending' %}pending{% else %}upcoming{% endif %}">
+          <div class="image-container">
+            {% if booking.ground.image %}
+              <img src="{{ booking.ground.image.url }}" alt="{{ booking.ground.name }}">
+            {% else %}
+              <img src="{% static 'images/no-image.jpg' %}" alt="No image available">
+            {% endif %}
+          </div>
+
+          <div class="booking-details">
+            <h2>{{ booking.ground.name }}</h2>
+            <p><strong>Location:</strong> {{ booking.ground.location }}</p>
+            <p><strong>Date:</strong> {{ booking.date }}</p>
+            <p><strong>Time:</strong> {{ booking.start_time }} - {{ booking.end_time }}</p>
+            <p><strong>Status:</strong> <span class="status">{{ booking.status|title }}</span></p>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="no-bookings">You have no bookings yet.</p>
+    {% endif %}
+  </section>
 </body>
 </html>

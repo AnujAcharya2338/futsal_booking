@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'bookings',
     'home',
 ]
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
