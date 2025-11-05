@@ -1,33 +1,128 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Available Futsal Grounds{% endblock %}
+{% block title %}Futsal Grounds | Futsal Hub{% endblock %}
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/ground.css' %}">
 {% endblock %}
 
 {% block content %}
-<header>
-  <h1>Available Futsal Grounds</h1>
-</header>
+<div class="grounds-page">
 
-<div class="grounds-container">
-  {% for ground in grounds %}
+  <!-- 🏆 Header -->
+  <header class="grounds-header">
+    <h1>Futsal Grounds</h1>
+    <p>Find and book the perfect ground for your match</p>
+  </header>
+
+  <!-- 🔍 Filters and Search -->
+  <div class="filters">
+    <input type="text" placeholder="Search grounds..." class="search-input">
+
+    <select class="filter-select">
+      <option>All Locations</option>
+      <option>Kathmandu</option>
+      <option>Lalitpur</option>
+      <option>Bhaktapur</option>
+    </select>
+
+    <select class="filter-select">
+      <option>All Prices</option>
+      <option>Below NPR 1500</option>
+      <option>NPR 1500 - NPR 2000</option>
+      <option>Above NPR 2000</option>
+    </select>
+  </div>
+
+  <!-- 📋 Ground Count -->
+  <p class="ground-count">Showing 6 of 6 grounds</p>
+
+  <!-- 🏟️ Grounds Grid -->
+  <div class="grounds-grid">
     <div class="ground-card">
-      {% if ground.image %}
-        <img src="{{ ground.image.url }}" alt="{{ ground.name }}">
-      {% else %}
-        <img src="{% static 'images/no-image.jpg' %}" alt="No Image Available">
-      {% endif %}
-      <div class="ground-info">
-        <h2>{{ ground.name }}</h2>
-        <p class="location">{{ ground.location }}</p>
-        <p class="price">Price: ₹{{ ground.price_per_hour }} / hour</p>
-        <a href="{% url 'bookings:create_booking' ground.id %}" class="book-btn">Book Now</a>
+      <img src="{% static 'images/arena.jpg' %}" alt="Arena Sports Complex">
+      <div class="info">
+        <h2>Arena Sports Complex</h2>
+        <p class="location">Kathmandu</p>
+        <p class="desc">Premium indoor futsal court with professional-grade artificial turf and excellent lighting.</p>
+        <p class="price">NPR 2000/hr</p>
+        <div class="buttons">
+          <a href="#" class="details-btn">View Details</a>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
       </div>
     </div>
-  {% empty %}
-    <p class="no-grounds">No grounds available at the moment.</p>
-  {% endfor %}
+
+    <div class="ground-card">
+      <img src="{% static 'images/greenfield.jpg' %}" alt="Green Field Futsal">
+      <div class="info">
+        <h2>Green Field Futsal</h2>
+        <p class="location">Lalitpur</p>
+        <p class="desc">Well-maintained outdoor futsal ground with quality turf and great atmosphere.</p>
+        <p class="price">NPR 1500/hr</p>
+        <div class="buttons">
+          <a href="#" class="details-btn">View Details</a>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ground-card">
+      <img src="{% static 'images/victory.jpg' %}" alt="Victory Futsal Arena">
+      <div class="info">
+        <h2>Victory Futsal Arena</h2>
+        <p class="location">Bhaktapur</p>
+        <p class="desc">Modern indoor facility with air conditioning and premium amenities.</p>
+        <p class="price">NPR 1800/hr</p>
+        <div class="buttons">
+          <a href="#" class="details-btn">View Details</a>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ground-card">
+      <img src="{% static 'images/champions.jpg' %}" alt="Champions Ground">
+      <div class="info">
+        <h2>Champions Ground</h2>
+        <p class="location">Kathmandu</p>
+        <p class="desc">Top-tier facility used for professional matches and tournaments.</p>
+        <p class="price">NPR 2200/hr</p>
+        <div class="buttons">
+          <a href="#" class="details-btn">View Details</a>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ground-card">
+      <img src="{% static 'images/riverside.jpg' %}" alt="Riverside Futsal">
+      <div class="info">
+        <h2>Riverside Futsal</h2>
+        <p class="location">Lalitpur</p>
+        <p class="desc">Scenic outdoor ground with beautiful views and great playing conditions.</p>
+        <p class="price">NPR 1600/hr</p>
+        <div class="buttons">
+          <a href="#" class="details-btn">View Details</a>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ground-card">
+      <img src="{% static 'images/elite.jpg' %}" alt="Elite Sports Center">
+      <div class="info">
+        <h2>Elite Sports Center</h2>
+        <p class="location">Kathmandu</p>
+        <p class="desc">Luxury futsal facility with state-of-the-art equipment and amenities.</p>
+        <p class="price">NPR 2500/hr</p>
+        <div class="buttons">
+          <a href="#" class="details-btn">View Details</a>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 {% endblock %}

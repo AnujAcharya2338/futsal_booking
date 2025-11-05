@@ -1,0 +1,88 @@
+/* Center the login box without hiding header/footer */
+.login-container {
+  min-height: calc(100vh - 160px); /* leaves room for header (80px) + footer (80px) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* match your site's theme */
+  padding: 40px 0;
+}
+
+/* Style the actual login box */
+.login-box {
+  background: #0f0f0f;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  width: 360px;
+  text-align: center;
+}
+
+.login-box h1 {
+  color: #00ff6a;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #ccc;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: #fff;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #222;
+  color: #fff;
+}
+
+.btn {
+  width: 100%;
+  background: #00ff6a;
+  border: none;
+  color: #000;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #00cc55;
+}
+
+.forgot {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.forgot a {
+  color: #00ff6a;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.signup {
+  margin-top: 15px;
+  color: #ccc;
+}
+
+.signup a {
+  color: #00ff6a;
+  text-decoration: none;
+}

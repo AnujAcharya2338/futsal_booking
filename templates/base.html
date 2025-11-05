@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Futsal Hub{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% block extra_css %}{% endblock %}
 </head>
 <body>
   <!-- 🔝 Navbar -->
@@ -28,8 +28,29 @@
   </main>
 
   <!-- 🦶 Footer -->
-  <footer>
-    <p>© 2025 Futsal Hub | Developed by Anuj</p>
+   <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3>About Us</h3>
+        <p>We make futsal booking simple, fast, and reliable.<br>Save time and enjoy your game!</p>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Contact</h3>
+        <p>info@futsalbooker.com</p>
+        <p>+977-9800000000</p>
+      </div>
+
+      <div class="footer-section social">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><img src="{% static 'images/facebook.svg' %}" alt="Facebook"></a>
+          <a href="#"><img src="{% static 'images/instagram.svg' %}" alt="Instagram"></a>
+          <a href="#"><img src="{% static 'images/twitter.svg' %}" alt="Twitter"></a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2025 Futsal Booker. All rights reserved.</p>
   </footer>
 </body>
 </html>

@@ -6,8 +6,24 @@
 body {
   font-family: "Poppins", sans-serif;
   color: white;
-  background-color: #000;
 }
+/* === Make footer stay at the bottom === */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #0a0a0a; /* Match your dark theme */
+  color: white;
+}
+
+/* Main content should expand to fill space between header & footer */
+main {
+  flex: 1;
+  padding-bottom: 20px; /* optional spacing above footer */
+}
+
 
 .top {
   display: flex;
@@ -88,4 +104,67 @@ color: white;
 
 .top_right button a {
   color: white;
+}
+.footer {
+  background-color: #0a0a0a;
+  color: #ccc;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 15px;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  color: #00ff88;
+  margin-bottom: 10px;
+}
+.forgot a:hover {
+  color: #00ff6a;
+  text-shadow: 0 0 6px #00ff6a;
+}
+.signup a:hover {
+  color: #00cc55;
+  text-shadow: 0 0 6px #00ff6a;
+}
+.footer-section p {
+  line-height: 1.6;
+  color: #aaa;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
+}
+
+.social-icons img:hover {
+  filter: brightness(0) invert(0.5) sepia(1) saturate(5) hue-rotate(100deg);
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding-top: 15px;
+  color: #777;
+  font-size: 0.9rem;
 }

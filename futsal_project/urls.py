@@ -25,4 +25,5 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('grounds/', include('grounds.urls')),
     path('bookings/', include('bookings.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
