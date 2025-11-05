@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background-color: #000;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #020a0c;
+  height: 70px;
+  width: 100%;
+  padding: 0 30px;
+}
+
+.top_left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.top_left h2{
+color: white;
+}
+
+.top_left h2 {
+  font-weight: 700;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+
+
+.top_right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.top_right a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.top_right a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background-color: #00ff00;
+  transition: width 0.3s ease;
+}
+
+
+.top_right a:hover {
+  color: #00ff00;
+}
+
+.top_right a:hover::after {
+  width: 100%;
+}
+
+.top_right button {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 7px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.top_right button:hover {
+  background-color: #00b300;
+  transform: scale(1.05);
+}
+
+.top_right button a {
+  color: white;
+}
