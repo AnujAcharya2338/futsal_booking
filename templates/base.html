@@ -1,56 +1,83 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{% block title %}Futsal Hub{% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  {% block extra_css %}{% endblock %}
-</head>
-<body>
-  <!-- 🔝 Navbar -->
-  <div class="top">
-    <div class="top_left">
-      <img src="{% static 'images/logo.png' %}" alt="Logo" width="70" height="70" />
-      <h2>Futsal Hub</h2>
-    </div>
-    <div class="top_right">
-      <a href="{% url 'home' %}">Home</a>
-      <a href="{% url 'grounds_list' %}">Grounds</a>
-      <a href="{% url 'bookings_list' %}">Bookings</a>
-      <button><a href="{% url 'login' %}">Login</a></button>
-    </div>
-  </div>
-
-  <!-- 🧱 Page Content -->
-  <main>
-    {% block content %}{% endblock %}
-  </main>
-
-  <!-- 🦶 Footer -->
-   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section about">
-        <h3>About Us</h3>
-        <p>We make futsal booking simple, fast, and reliable.<br>Save time and enjoy your game!</p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Futsal Hub{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% block extra_css %}{% endblock %}
+  </head>
+  <body>
+    <!-- 🔝 Navbar -->
+    <div class="top">
+      <div class="top_left">
+        <img
+          src="{% static 'images/logo.png' %}"
+          alt="Logo"
+          width="70"
+          height="70"
+        />
+        <h2>Futsal Hub</h2>
       </div>
+      <div class="top_right">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'grounds_list' %}">Grounds</a>
+        <a href="{% url 'bookings_list' %}">Bookings</a>
 
-      <div class="footer-section contact">
-        <h3>Contact</h3>
-        <p>info@futsalbooker.com</p>
-        <p>+977-9800000000</p>
+      {% if user.is_authenticated %}
+    <div class="user-menu">
+      <button class="user-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="28" height="28" class="user-icon">
+      <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+    </svg>
+      </button>
+      <div class="dropdown">
+        <a href="#">Profile</a>
+        <a href="{% url 'logout' %}">Logout</a>
       </div>
+    </div>
+  {% else %}
+    <button><a href="{% url 'login' %}">Login</a></button>
+  {% endif %}
+      </div>
+    </div>
 
-      <div class="footer-section social">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#"><img src="{% static 'images/facebook.svg' %}" alt="Facebook"></a>
-          <a href="#"><img src="{% static 'images/instagram.svg' %}" alt="Instagram"></a>
-          <a href="#"><img src="{% static 'images/twitter.svg' %}" alt="Twitter"></a>
+    <!-- 🧱 Page Content -->
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- 🦶 Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h3>About Us</h3>
+          <p>
+            We make futsal booking simple, fast, and reliable.<br />Save time
+            and enjoy your game!
+          </p>
+        </div>
+
+        <div class="footer-section contact">
+          <h3>Contact</h3>
+          <p>info@futsalbooker.com</p>
+          <p>+977-9800000000</p>
+        </div>
+
+        <div class="footer-section social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"
+              ><img src="{% static 'images/facebook.png' %}" alt="Facebook"
+            /></a>
+            <a href="#"
+              ><img src="{% static 'images/instagram.png' %}" alt="Instagram"
+            /></a>
+            <a href="#"
+              ><img src="{% static 'images/twitter.png' %}" alt="Twitter"
+            /></a>
+          </div>
         </div>
       </div>
-    </div>
-    <p class="footer-bottom">© 2025 Futsal Booker. All rights reserved.</p>
-  </footer>
-</body>
+      <p class="footer-bottom">© 2025 Futsal Booker. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
