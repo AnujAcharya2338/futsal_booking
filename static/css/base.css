@@ -147,13 +147,13 @@ color: white;
 
 .social-icons {
   display: flex;
-  gap: 12px;
+  gap: 15px;
   margin-top: 8px;
 }
 
 .social-icons img {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   filter: brightness(0) invert(1);
   transition: filter 0.3s;
 }
@@ -162,9 +162,70 @@ color: white;
   filter: brightness(0) invert(0.5) sepia(1) saturate(5) hue-rotate(100deg);
 }
 
+
 .footer-bottom {
   border-top: 1px solid #222;
   padding-top: 15px;
   color: #777;
   font-size: 0.9rem;
 }
+.user-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.user-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.user-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+}
+
+.user-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px #00ff88;
+}
+
+/* Dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 45px; /* right below the icon */
+  right: 0;
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  min-width: 140px;
+  padding: 6px 0;
+  z-index: 10;
+}
+
+.dropdown a {
+  display: block;
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown a:hover {
+  background-color: #00ff88;
+  color: #000;
+}
+
+/* Show dropdown on hover */
+.user-menu:hover .dropdown {
+  display: block;
+}
+
