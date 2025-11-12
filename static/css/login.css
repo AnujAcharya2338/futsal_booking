@@ -86,3 +86,68 @@
   color: #00ff6a;
   text-decoration: none;
 }
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  outline: none;
+  background-color: #222; /* Same background for all */
+  color: #fff;
+  font-size: 14px;
+  appearance: none; /* removes default dropdown arrow (we’ll add custom below) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Optional: Add a custom arrow to dropdown */
+.form-group select {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+/* Optional hover and focus effects */
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #00ff99;
+  box-shadow: 0 0 5px #00ff9960;
+}
+/* Make input fields consistent in color even when filled */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  outline: none;
+  background-color: #222; /* Dark background */
+  color: #fff;
+  font-size: 14px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Prevent Chrome autofill from turning input white/yellow */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #222 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Focus state */
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #00ff99;
+  box-shadow: 0 0 5px #00ff9960;
+}
